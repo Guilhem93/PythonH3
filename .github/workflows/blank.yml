@@ -1,0 +1,8 @@
+# Bases Python 
+# 1.1
+A,B = B,A 
+# 1.2 
+nombre = int
+nombre = input("Entrer un nombre : ")
+nombre * nombre
+nombre 
