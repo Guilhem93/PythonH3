@@ -132,3 +132,12 @@ n = input("Entrer des mots separes par un espace : ")
 user_list = n.split()
 list_triee = sorted(user_list)
 print(list_triee)
+
+
+#EXO 4 
+
+for C in Couleurs:
+       for v in valeurs:
+       card = str(v) + " " + str(C)
+       deck.append(card)
+print(deck)
