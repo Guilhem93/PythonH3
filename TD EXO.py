@@ -60,128 +60,83 @@ print ("Temperature:", Fahrenheit, "Fahrenheit = ", Celsius, " Celsius")
 
 #TD2 
 
-#Exercice 1
+# Exo 1 | 1-2
+c = "X44bf38j23jdjgfjh737nei47"  ## déclaration de la variable avec lettre et chiffre au hasard
+c_num = ""  ## déclaration de la variable sans valeur dedans    
+c_alpha = ""  ## déclaration de la variable sans valeur dedans 
+for caracters in c:             ##Boucle FOR  pour tout élément dans C
+    if str.isdigit(caracters) == True:  ##Si la chaine de caractère "caracters" contient des chiffres , la variable c_num s'ajoute + ou égale les chiffres dans la variable C
+        c_num += caracters
+    else:
+        c_alpha += caracters    #sinon la variable c_alpha + ou égale le nombre de chiffre dans la variable caracters
 
-#
-c = "X44bf38j23jdjgfjh737nei47"
+print(c_num, c_alpha) ##a afficher la valeur de C_num et c_alpha
 
+# Exo 1 | 3
+str_find = "j23"  ## chaine de caractère find qui permet de retrouver les caractères j23
+c.find(str_find) ## Renvoie le premier indice d'apparition  de notre chaine de caractère str_find
+if c.find(str_find) != -1: ## si c.find n'est pas égale à -1 alors on déclare une nouvelle variable qui remplace notre chaine de caractere J23 par J24
+    new_c = c.replace(str_find, "j24")
+    print(new_c) ##affiche notre nouvelle variable qui à remplacé l'ancienne
+else : 
+    print("Il ")
+# Exo 1 | 4
+list = ["f","3","7"] ## déclaration d'une liste  avec trois valeurs . 
+for string in list: ## Boucle for pour tout élément string dans la liste , on déclare la variable first qui est égale au premier indice de notre apparition de chaine 
+    first = c.find(string)
+    print(first) ##affiche notre premier indice
 
-#
-c_alpha, c_num = "", ""
-for x in c:
-	if x.isalpha():
-		c_alpha = c_alpha + x
-	else:
-		c_num = c_num + x
+print("\n")
 
-print(c_alpha)
-print(c_num)
-
-
-#
-if c.find("j23") != 1:
-	c = c.replace("j23","j24")
-
-
-#
-i1 = c.find("f")
-i2 = c.find("3")
-i3 = c.find("7")
-#print(i1, i2, i3)
-
-if (i1 < i2) and (i2 < i3):
-	print("Le pattern f37 existe dans la chaine de caractère")
-else:
-	print("Le pattern f37 n'existe pas dans la chaine de caractère")
-
-#Exercice 2
-
-#
-
+# Exo 2 | 1
 texte = "We introduce here the Python language"
+compteur = 0
+for lettre in texte:
+    compteur += 1
+if compteur == len(texte):
+    print("good")
+else:
+    print("not good")
 
-counter = 0
-for c in texte:
-	counter += 1
-print(counter)
-print(len(texte))
+# Sans compter les espaces
+compteur_lettre = 0
+for lettre in texte:
+    if lettre == " ":
+        pass
+    else:
+        compteur_lettre += 1
+print(compteur_lettre)
 
-counter = 0
-for c in texte:
-	if  c != " ":
-		counter += 1
-print(counter)
+# Compter les mots dans la variable texte
+mots = len(texte.split())
+print(mots)
 
-# Faire attention à  l'indentation dans ce point
+# Exo 2 | 2
 
-counter = 0
-for c in texte:
-	if  c == " ":
-		counter += 1
-counter += 1
-print(counter)
+# Oui tjrs viable puisque j'ai utilisé le module split
 
+texte2 = "We introduce here the Python language. To learn more about the language, \
+consider going through the excellent tutorial https://docs.python.org/ \
+tutorial. Dedicated books are also available, such as \
+http://www.diveintopython.net/."
+mots = len(texte2.split())
+print(mots)
 
-#
-
-
-texte2 = "We introduce here the Python language. To learn more about the language, consider going through the excellent tutorial https://docs.python.org/tutorial. Dedicated books are also available, such as http://www.diveintopython.net/."
-print(texte2)
-
-counter = 0
-for c in texte2:
-	if  (c == " "):
-		counter += 1
-counter += 1
-print(counter)
-
-#Exercice 3
-
-#
-liste_mots = []
-m1 = input("Entrer un mot: ")
-liste_mots.append(m1)
-m2 = input("Entrer un mot: ")
-liste_mots.append(m2)
-m3 = input("Entrer un mot: ")
-liste_mots.append(m3)
-
-liste_mots.sort()
-
-for m in liste_mots:
-	print(m)
+# Exo 3 | 1-2
+n = input("Entrer des mots separes par un espace : ")
+user_list = n.split()
+list_triee = sorted(user_list)
+print(list_triee)
 
 
-#
-liste_mots2 = []
-mot = input("Entrer un mot et taper FIN pour terminer la saisie: ")
-while (mot != "FIN") and (mot != "fin"):
-	liste_mots2.append(mot)
-	mot = input("Entrer un mot et taper FIN pour terminer la saisie: ")
+#EXO 4 
 
-liste_mots2.sort()
+for C in Couleurs:n
+       for v in valeurs:
+       card = str(v) + " " + str(C)
+       deck.append(card)
+print(deck)
 
-for m in liste_mots2:
-	print(m)
-
-
-#
-liste_mots2 = []
-while True:
-	mot = input("Entrer un mot et taper FIN pour terminer la saisie: ")
-	if (mot != "FIN") and (mot != "fin"):
-		liste_mots2.append(mot)
-	else:
-		break
-
-liste_mots2.sort()
-
-for m in liste_mots2:
-	print(m)
-
-#Exercice 4
-
-#
 couleurs = ['Pique', 'Trefle', 'Carreau', 'Coeur']
 valeurs = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'valet', 'dame', 'roi', 'as']
 
@@ -224,7 +179,7 @@ print(joueur2)
 print(joueur3)
 print(joueur4)
 
-#Exercice 6
+#Exo 6
 
 #
 prenom = input("Entrer le prenom de l'etudiant: ")
@@ -250,7 +205,7 @@ while True:
 for e in liste_etudiants:
 	print("Prenom:", e[0] + ".", "Nom:", e[1]  + ".", "Matricule:", e[2] + ".")
 
-#Exercice 7
+#Exo 7
 
 #
 dico_fr_ang = {"bonjour" : "Hello", "au revoir" : "bye"}
@@ -289,7 +244,7 @@ print(dico_fr_ang)
 #
 print(dico_fr_ang["chemin"][1])
 
-#Exercice 8
+#Exo 8
 
 #
 print('----1----')
