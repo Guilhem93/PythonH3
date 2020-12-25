@@ -58,86 +58,288 @@ print ("Temperature:", Fahrenheit, "Fahrenheit = ", Celsius, " Celsius")
 ## Exercice 7
 
 
+#TD2 
+
+#Exercice 1
+
+#
+c = "X44bf38j23jdjgfjh737nei47"
 
 
+#
+c_alpha, c_num = "", ""
+for x in c:
+	if x.isalpha():
+		c_alpha = c_alpha + x
+	else:
+		c_num = c_num + x
+
+print(c_alpha)
+print(c_num)
 
 
+#
+if c.find("j23") != 1:
+	c = c.replace("j23","j24")
 
-##TD 2
 
-# Exo 1 | 1-2
-c = "X44bf38j23jdjgfjh737nei47"  ## déclaration de la variable avec lettre et chiffre au hasard
-c_num = ""  ## déclaration de la variable sans valeur dedans    
-c_alpha = ""  ## déclaration de la variable sans valeur dedans 
-for caracters in c:             ##Boucle FOR  pour tout élément dans C
-    if str.isdigit(caracters) == True:  ##Si la chaine de caractère "caracters" contient des chiffres , la variable c_num s'ajoute + ou égale les chiffres dans la variable C
-        c_num += caracters
-    else:
-        c_alpha += caracters    #sinon la variable c_alpha + ou égale le nombre de chiffre dans la variable caracters
+#
+i1 = c.find("f")
+i2 = c.find("3")
+i3 = c.find("7")
+#print(i1, i2, i3)
 
-print(c_num, c_alpha) ##a afficher la valeur de C_num et c_alpha
-
-# Exo 1 | 3
-str_find = "j23"  ## chaine de caractère find qui permet de retrouver les caractères j23
-c.find(str_find) ## Renvoie le premier indice d'apparition  de notre chaine de caractère str_find
-if c.find(str_find) != -1: ## si c.find n'est pas égale à -1 alors on déclare une nouvelle variable qui remplace notre chaine de caractere J23 par J24
-    new_c = c.replace(str_find, "j24")
-    print(new_c) ##affiche notre nouvelle variable qui à remplacé l'ancienne
-else : 
-    print("Il ")
-# Exo 1 | 4
-list = ["f","3","7"] ## déclaration d'une liste  avec trois valeurs . 
-for string in list: ## Boucle for pour tout élément string dans la liste , on déclare la variable first qui est égale au premier indice de notre apparition de chaine 
-    first = c.find(string)
-    print(first) ##affiche notre premier indice
-
-print("\n")
-
-# Exo 2 | 1
-texte = "We introduce here the Python language"
-compteur = 0
-for lettre in texte:
-    compteur += 1
-if compteur == len(texte):
-    print("good")
+if (i1 < i2) and (i2 < i3):
+	print("Le pattern f37 existe dans la chaine de caractère")
 else:
-    print("not good")
+	print("Le pattern f37 n'existe pas dans la chaine de caractère")
 
-# Sans compter les espaces
-compteur_lettre = 0
-for lettre in texte:
-    if lettre == " ":
-        pass
-    else:
-        compteur_lettre += 1
-print(compteur_lettre)
+#Exercice 2
 
-# Compter les mots dans la variable texte
-mots = len(texte.split())
-print(mots)
+#
 
-# Exo 2 | 2
+texte = "We introduce here the Python language"
 
-# Oui tjrs viable puisque j'ai utilisé le module split
+counter = 0
+for c in texte:
+	counter += 1
+print(counter)
+print(len(texte))
 
-texte2 = "We introduce here the Python language. To learn more about the language, \
-consider going through the excellent tutorial https://docs.python.org/ \
-tutorial. Dedicated books are also available, such as \
-http://www.diveintopython.net/."
-mots = len(texte2.split())
-print(mots)
+counter = 0
+for c in texte:
+	if  c != " ":
+		counter += 1
+print(counter)
 
-# Exo 3 | 1-2
-n = input("Entrer des mots separes par un espace : ")
-user_list = n.split()
-list_triee = sorted(user_list)
-print(list_triee)
+# Faire attention à  l'indentation dans ce point
+
+counter = 0
+for c in texte:
+	if  c == " ":
+		counter += 1
+counter += 1
+print(counter)
 
 
-#EXO 4 
+#
 
-for C in Couleurs:
-       for v in valeurs:
-       card = str(v) + " " + str(C)
-       deck.append(card)
-print(deck)
+
+texte2 = "We introduce here the Python language. To learn more about the language, consider going through the excellent tutorial https://docs.python.org/tutorial. Dedicated books are also available, such as http://www.diveintopython.net/."
+print(texte2)
+
+counter = 0
+for c in texte2:
+	if  (c == " "):
+		counter += 1
+counter += 1
+print(counter)
+
+#Exercice 3
+
+#
+liste_mots = []
+m1 = input("Entrer un mot: ")
+liste_mots.append(m1)
+m2 = input("Entrer un mot: ")
+liste_mots.append(m2)
+m3 = input("Entrer un mot: ")
+liste_mots.append(m3)
+
+liste_mots.sort()
+
+for m in liste_mots:
+	print(m)
+
+
+#
+liste_mots2 = []
+mot = input("Entrer un mot et taper FIN pour terminer la saisie: ")
+while (mot != "FIN") and (mot != "fin"):
+	liste_mots2.append(mot)
+	mot = input("Entrer un mot et taper FIN pour terminer la saisie: ")
+
+liste_mots2.sort()
+
+for m in liste_mots2:
+	print(m)
+
+
+#
+liste_mots2 = []
+while True:
+	mot = input("Entrer un mot et taper FIN pour terminer la saisie: ")
+	if (mot != "FIN") and (mot != "fin"):
+		liste_mots2.append(mot)
+	else:
+		break
+
+liste_mots2.sort()
+
+for m in liste_mots2:
+	print(m)
+
+#Exercice 4
+
+#
+couleurs = ['Pique', 'Trefle', 'Carreau', 'Coeur']
+valeurs = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'valet', 'dame', 'roi', 'as']
+
+#liste des 52 cartes
+cartes = []
+for coul in couleurs:
+	for val in valeurs:
+		cartes.append(str(val) + " de " + coul)		
+print(cartes)
+
+#
+from random import shuffle
+
+shuffle(cartes)
+print(cartes)
+
+#
+joueur1 = []
+joueur2 = []
+joueur3 = []
+joueur4 = []
+
+compteur = 0
+for c in cartes:
+	if compteur == 0:
+		joueur1.append(c)
+		compteur = (compteur + 1) % 4 
+	elif compteur == 1:
+		joueur2.append(c)
+		compteur = (compteur + 1) % 4 
+	elif compteur == 2:
+		joueur3.append(c)
+		compteur = (compteur + 1) % 4 
+	elif compteur == 3:
+		joueur4.append(c)
+		compteur = (compteur + 1) % 4 
+
+print(joueur1)
+print(joueur2)
+print(joueur3)
+print(joueur4)
+
+#Exercice 6
+
+#
+prenom = input("Entrer le prenom de l'etudiant: ")
+nom = input("Entrer le nom de l'etudiant: ")
+matricule = input("Entrer le matricule de l'etudiant: ")
+etudiant = (prenom, nom, matricule)
+print(etudiant)
+
+
+#
+liste_etudiants = []
+while True:
+	prenom = input("Entrer le prenom de l'etudiant (entrer FIN pour terminer la saisie): ")
+	if (prenom == "FIN") or (prenom == "fin"):
+		break
+	else:
+		nom = input("Entrer le nom de l'etudiant: ")
+		matricule = input("Entrer le matricule de l'etudiant: ")
+		etudiant = (prenom, nom, matricule)
+		liste_etudiants.append(etudiant)
+
+#
+for e in liste_etudiants:
+	print("Prenom:", e[0] + ".", "Nom:", e[1]  + ".", "Matricule:", e[2] + ".")
+
+#Exercice 7
+
+#
+dico_fr_ang = {"bonjour" : "Hello", "au revoir" : "bye"}
+print(dico_fr_ang)
+
+#
+dico_fr_ang["cerveau"] = "brain"
+print(dico_fr_ang)
+
+#
+for x in dico_fr_ang.keys():
+	if x == "cerveau":
+		print("la traduction anglaise de", x, "est", dico_fr_ang[x])
+
+#
+dico_ang_fr = {}
+for k, v in dico_fr_ang.items():
+	dico_ang_fr[v] = k
+print(dico_ang_fr)
+
+# 
+for x in dico_ang_fr.keys():
+	if x == "brain":
+		print("la traduction francaise de", x, "est", dico_ang_fr[x])
+
+#
+for k, v in dico_ang_fr.items():
+	if v == "cerveau":
+		print(k)
+
+#
+dico_fr_ang = {"bonjour" : ["Hello", "Hi"], "au revoir" : ["bye", "bye bye"]}
+dico_fr_ang["chemin"] = ["path", "way"]
+print(dico_fr_ang)
+
+#
+print(dico_fr_ang["chemin"][1])
+
+#Exercice 8
+
+#
+print('----1----')
+dico_etudiants = {}
+prenom = input("Entrer le prenom de l'etudiant: ")
+nom = input("Entrer le nom de l'etudiant: ")
+matricule = input("Entrer le matricule de l'etudiant: ")
+dico_etudiants[nom] = (prenom, nom, matricule)
+print(dico_etudiants)
+
+#
+print('----2----')
+dico_etudiants = {}
+while True:
+	prenom = input("Entrer le prenom de l'etudiant (entrer FIN pour terminer la saisie): ")
+	if (prenom == "FIN") or (prenom == "fin"):
+		break
+	else:
+		nom = input("Entrer le nom de l'etudiant: ")
+		matricule = input("Entrer le matricule de l'etudiant: ")
+		dico_etudiants[nom] = (prenom, nom, matricule)
+
+#
+print('----3----')
+for nom_etud in dico_etudiants:
+	print("Prenom:", dico_etudiants[nom_etud][0] + ".", "Nom:", dico_etudiants[nom_etud][1]  + ".", "Matricule:", str(dico_etudiants[nom_etud][2]) + ".")
+
+#
+print('----4----')
+if "Obama" in dico_etudiants.keys():
+	print("Prenom:", dico_etudiants["Obama"][0] + ".", "Nom:", dico_etudiants["Obama"][1]  + ".", "Matricule:", str(dico_etudiants["Obama"][2]) + ".")
+
+#
+print('----5----')
+for k, v in dico_etudiants.items():
+	if v[2] == 12345678:
+		print("Prenom:", dico_etudiants[k][0] + ".", "Nom:", dico_etudiants[k][1]  + ".", "Matricule:", str(dico_etudiants[k][2]) + ".")
+
+#
+print('----6----')
+dico_etudiants = {}
+while True:
+  prenom = input("Entrer le prenom de l'etudiant (entrer FIN pour terminer la saisie): ")
+	if (prenom == "FIN") or (prenom == "fin"):
+		break
+	else:
+		nom = input("Entrer le nom de l'etudiant: ")
+		matricule = input("Entrer le matricule de l'etudiant: ")
+		#ici, les clÃ©s deviennent des strings nom + matricule
+		dico_etudiants[nom + str(matricule)] = (prenom, nom, matricule)
+
+for nom_matricule in dico_etudiants:
+	print("Prenom:", dico_etudiants[nom_matricule][0] + ".", "Nom:", dico_etudiants[nom_matricule][1]  + ".", "Matricule:", str(dico_etudiants[nom_matricule][2]) + ".")
